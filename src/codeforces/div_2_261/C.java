@@ -22,7 +22,7 @@ public class C {
         } else {
             ok = false;
         }
-        if(d ==1 && n==1 &&k==1) ok = true;
+        if(n==1) ok = true;
 		if (ok) {
 			/*
 			 * java 输出流太慢了。一直WA
