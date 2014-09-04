@@ -1,65 +1,70 @@
 package codeforces.div_2_261;
 
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.*;
+
 
 public class E {
-	static int N = 400000;
-	static int M = 1000000;
-	static int n,m,ne,top,end;
-	static int que[],dis[],edge[],head[],weight[],next[];
-	static boolean mark[];
-	static void init(){
+	static int n,m,dp[],que[],dp2[];
+	static int M = 500000;
+	public static void main(String[] args) throws IOException {
+		
+		/*
+		 * ÈÝÒ×³¬Ê±
+		 */
+		//Scanner cin = new Scanner(System.in);
+		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+
+		StringTokenizer tokenizer = new StringTokenizer(reader.readLine());
+		n = Integer.parseInt(tokenizer.nextToken());;
+		m = Integer.parseInt(tokenizer.nextToken());;
+		Edge e[] = new Edge[m];
+		dp = new int[M];
+		dp2 = new int[M];
 		que = new int[M];
-		dis = new int[M];
-		edge = new int [M];
-		head = new int[N];
-		weight = new int[M];
-		next = new int[M];
-		ne = 1;
-		top = 0;
-		end = 0;
-		mark = new boolean[N];
-		for(int i=0;i<N;i++){
-			mark[i] = true;
+		for(int i=0;i<m;i++){
+			e[i] = new Edge();
 		}
-	}
-	static void add(int a,int b,int v){
-		next[ne] = head[a];
-		head[a] = ne;
-		weight[ne] = v;
-		edge[ne++] = b;
-	}
-	static Integer dp(){
-		for(int i=1 ;i<=n;i++){
-			que[end++] = i;
+		for(int i=0;i<m;i++){
+			
+			tokenizer = new StringTokenizer(reader.readLine());
+			e[i].from = Integer.parseInt(tokenizer.nextToken());
+			e[i].to = Integer.parseInt(tokenizer.nextToken());
+			e[i].v = Integer.parseInt(tokenizer.nextToken());
+			//System.out.println(e[i].from);
 		}
-		while(top<end){
-			int x = que[top++];
-			mark[x] = false;
-			for(int i = head[x];i>0;i=next[i]){
-				int to = edge[i];
-				int v = weight[i];
-				//if()
-				if(!mark[to]){
-					mark[to] = true;
-					que[end++] = to;
+		Arrays.sort(e);
+		int max = 0 , top = 0,end = 0;;
+		int pre = -1;
+		for (int i = 0; i < m; i++) {
+			if (pre != e[i].v) {
+				while (top < end) {
+					int x = que[top++];
+					dp[x] = dp2[x];
 				}
 			}
+			que[end++] = e[i].to;
+			dp2[e[i].to] = Math.max(dp2[e[i].to], dp[e[i].to]);
+			dp2[e[i].to] = Math.max(dp2[e[i].to], dp[e[i].from] + 1);
+			pre = e[i].v;
+
 		}
-		return null;
+		while (top < end) {
+			int x = que[top++];
+			dp[x] = dp2[x];
+		}
+		for(int i=1;i<=n;i++){
+			max = Math.max(max,dp[i]);
+		}
+		System.out.println(max);
 	}
-	public static void main(String[] args) {
-		init();
-		Scanner cin = new Scanner(System.in);
-		n = cin.nextInt();
-		m = cin.nextInt();
-		for(int i=0;i<m;i++){
-			int a,b,v;
-			a = cin.nextInt();
-			b = cin.nextInt();
-			v = cin.nextInt();
-			add(a,b,v);
-		}
-		System.out.println(dp());
+	
+}
+class Edge implements Comparable<Edge>{
+	int to,v,from;
+	public int compareTo(Edge o) {
+		return v - o.v;
 	}
 }
