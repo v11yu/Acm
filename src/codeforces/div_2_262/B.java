@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class B {
 	public static void main(String[] args) {
 		int a,b,c;
+		long mm = 1000000000;
 		Scanner cin = new Scanner(System.in);
 		a = cin.nextInt();
 		b = cin.nextInt();
@@ -21,7 +22,7 @@ public class B {
 			y += c;
 			//System.out.println(i+" "+y);
 			int x = get(y);
-			if(x == i){
+			if(x == i&&y<=mm){
 				d[ans++] = y;
 			}
 		}
