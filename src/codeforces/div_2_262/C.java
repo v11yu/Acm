@@ -1,17 +1,50 @@
 package codeforces.div_2_262;
 
+import java.util.Scanner;
+/**
+ * 区间累加
+ * 不需要线段树
+ * 标记s数组，到k时减去
+ * @author Administrator
+ *
+ */
 public class C {
 	public static void show(){
 		
 	}
 	public static void main(String[] args) {
-		int x =3;
-		for(int j = x;j<10000;j+=j&(-j)){
-			System.out.println(j);
+		int n,k;
+		long m;
+		Scanner cin = new Scanner(System.in);
+		n = cin.nextInt();
+		m = cin.nextLong();
+		k = cin.nextInt();
+		int a[] = new int[n];
+		long s[] = new long[n+1];
+		for(int i=0;i<n;i++){
+			a[i] = cin.nextInt();
 		}
-		int y = 7;
-		for(int j = y;j>0;j-=j&(-j)){
-			System.out.println(j);
+		long low = 0,high = 1100000000;
+
+		while(low + 1 < high){
+			//System.out.println(low+" "+high);
+			long mid = (low+high)/2;
+			long cur = 0,sum =0 ,t;
+			//s[n-1] = 0;//clear
+			for(int i=0;i<n;i++){
+				cur -= s[i];
+				t = Math.max(mid - (cur+a[i]),0);
+				sum += t;
+				cur += t;
+				s[Math.min(n, i+k)] = t;
+			}
+			if(sum > m){
+				high = mid;
+			}
+			else{
+				low = mid;
+			}
 		}
+		System.out.println(low);
 	}
 }
