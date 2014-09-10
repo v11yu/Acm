@@ -16,7 +16,7 @@ public class C {
 		ss = str.toCharArray();
 		ans = str.toCharArray();
 		dfs(0,true);
-		if(yes) System.out.println(new String(ss));
+		if(yes) System.out.println(new String(ans));
 		else System.out.println("NO");
 		
 	}
