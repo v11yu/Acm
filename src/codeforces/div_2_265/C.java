@@ -15,21 +15,33 @@ public class C {
 		String str = cin.next();
 		ss = str.toCharArray();
 		ans = str.toCharArray();
-		dfs(0);
+		dfs(0,true);
 		if(yes) System.out.println(new String(ss));
 		else System.out.println("NO");
 		
 	}
-	public static void dfs(int index){
+	/**
+	 * 
+	 * @param index
+	 * @param equal 前缀是否相等。 前缀必须是大于等于
+	 */
+	public static void dfs(int index,boolean equal){
 		if(yes) return ;
-		if(index == n){
-			yes = true;
+		if(index == n ){
+			
+			if(!equal)yes = true;
 			return ;
 		}
-		for(int i=0;i<m;i++){
-			ans[i] = (char) ('a'+i);
+		
+		for(int i=0;i<m&&!yes;i++){
+			
+			ans[index] = (char) ('a'+i);
+			if(equal && ans[index]<ss[index]) continue ;
+			if(index > 0 &&ans[index] == ans[index-1]) continue ;
+			if(index > 1 &&ans[index] == ans[index-2]) continue ;
 			//if(ans[i])
-			dfs(i+1);
+			if(equal && ans[index] == ss[index]) dfs(index+1,true);
+			else dfs(index+1,false);
 		}
 	}
 
