@@ -11,17 +11,17 @@ public class A  {
 			laptops[i] = new Laptop(cin.nextInt(), cin.nextInt());
 		}
 		Arrays.sort(laptops);
-		boolean happy = true;
+		boolean happy = false;
 		
 		for(int i=1;i<n;i++){
-			if(laptops[i-1].quality < laptops[i].quality)
-				happy = false;
+			if(laptops[i-1].quality > laptops[i].quality)
+				happy = true;
 		}
 		if(happy)
 			System.out.println("Happy Alex");
 		else
 			System.out.println("Poor Alex");
-	}
+		}
 }
 class Laptop implements Comparable<Laptop>{
 	public int price;
@@ -35,7 +35,8 @@ class Laptop implements Comparable<Laptop>{
 	 */
 	@Override
 	public int compareTo(Laptop o) {
-
+		if(o.price == this.price)
+			return o.quality - this.quality;
 		return this.price - o.price;
 	}
 	@Override
