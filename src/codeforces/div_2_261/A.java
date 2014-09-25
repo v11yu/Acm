@@ -70,6 +70,7 @@ public class A {
 			System.out.println(x4+" "+y4+" "+x3+" "+y3);
 		else 
 			System.out.println(-1);
+		cin.close();
 	}
 }
 

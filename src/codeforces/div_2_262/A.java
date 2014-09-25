@@ -14,5 +14,6 @@ public class A {
 			n = n/m + n%m;
 		}
 		System.out.println(res);
+		cin.close();
 	}
 }

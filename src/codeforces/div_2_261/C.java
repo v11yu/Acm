@@ -12,8 +12,7 @@ public class C {
         d = cin.nextInt();
         boolean ok = false;
         
-        int i, j, p;
-        int pre = 0;
+        int i, j;
         if((d==1 && n>k) || k == 1){
             ok = false;
         }
@@ -25,9 +24,9 @@ public class C {
         if(n==1) ok = true;
 		if (ok) {
 			/*
-			 * java Êä³öÁ÷Ì«ÂýÁË¡£Ò»Ö±WA
-			 * »»³ÉString»¹ÊÇ²»ÐÐ¡£
-			 * »»³ÉStringBuilder
+			 * java ï¿½ï¿½ï¿½ï¿½ï¿½Ì«ï¿½ï¿½ï¿½Ë¡ï¿½Ò»Ö±WA
+			 * ï¿½ï¿½ï¿½ï¿½Stringï¿½ï¿½ï¿½Ç²ï¿½ï¿½Ð¡ï¿½
+			 * ï¿½ï¿½ï¿½ï¿½StringBuilder
 			 */
 			for (i = 0; i < d ; i++) {
 				StringBuilder str = new StringBuilder();
@@ -40,6 +39,7 @@ public class C {
 		}
 		else
 			System.out.println(-1);
+		cin.close();
     }
     public static int pow(int x,int k){
         if(k>1000) return 1;

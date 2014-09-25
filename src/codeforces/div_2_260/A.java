@@ -1,27 +1,29 @@
 package codeforces.div_2_260;
 import java.util.*;
-public class A  {
-	
+
+public class A {
+
 	public static void main(String[] args) {
 		int n;
 		Scanner cin = new Scanner(System.in);
 		n = cin.nextInt();
 		Laptop[] laptops = new Laptop[n];
-		for(int i=0;i<n;i++){
+		for (int i = 0; i < n; i++) {
 			laptops[i] = new Laptop(cin.nextInt(), cin.nextInt());
 		}
 		Arrays.sort(laptops);
 		boolean happy = false;
-		
-		for(int i=1;i<n;i++){
-			if(laptops[i-1].quality > laptops[i].quality)
+
+		for (int i = 1; i < n; i++) {
+			if (laptops[i - 1].quality > laptops[i].quality)
 				happy = true;
 		}
-		if(happy)
+		if (happy)
 			System.out.println("Happy Alex");
 		else
 			System.out.println("Poor Alex");
-		}
+		cin.close();
+	}
 }
 class Laptop implements Comparable<Laptop>{
 	public int price;
@@ -31,7 +33,7 @@ class Laptop implements Comparable<Laptop>{
 		this.quality = q;
 	}
 	/**
-	 * ´ÓÐ¡µ½´ó
+	 * ï¿½ï¿½Ð¡ï¿½ï¿½ï¿½ï¿½
 	 */
 	@Override
 	public int compareTo(Laptop o) {

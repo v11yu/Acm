@@ -1,13 +1,6 @@
 package codeforces.div_2_262;
 
 import java.util.Scanner;
-/**
- * 区间累加
- * 不需要线段树
- * 标记s数组，到k时减去
- * @author Administrator
- *
- */
 public class C {
 	public static void show(){
 		
@@ -46,5 +39,6 @@ public class C {
 			}
 		}
 		System.out.println(low);
+		cin.close();
 	}
 }

@@ -1,7 +1,6 @@
 package codeforces.div_2_261;
 
 import java.util.HashMap;
-import java.util.Map;
 import java.util.Scanner;
 
 public class D {
@@ -23,7 +22,6 @@ public class D {
 		int dp[] = new int[n];
 		int rdp[] = new int[n];
 		int st[] = new int[Max];
-		int num = 0;
 		long ans = 0;
 //		for(int i=0;i<Max;i++){
 //			st[i] = 0;
@@ -50,5 +48,6 @@ public class D {
 			}
 		}
 		System.out.println(ans);
+		cin.close();
 	}
 }

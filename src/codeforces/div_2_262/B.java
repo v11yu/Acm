@@ -10,7 +10,6 @@ public class B {
 		a = cin.nextInt();
 		b = cin.nextInt();
 		c = cin.nextInt();
-		long res = 0;
 		int ans = 0;
 		long d[] = new long[100];
 		for(int i=1;i<=81;i++){
@@ -30,6 +29,7 @@ public class B {
 		for(int i=0;i<ans;i++){
 			System.out.print(d[i]+" ");
 		}
+		cin.close();
 	}
 	public static int get(long y){
 		int res = 0;

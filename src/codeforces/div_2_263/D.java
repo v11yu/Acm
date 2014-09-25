@@ -35,6 +35,7 @@ public class D {
 		}
 		
 		System.out.println(dfs(0));
+		cin.close();
 
 	}
 	public static void add(int a,int b){

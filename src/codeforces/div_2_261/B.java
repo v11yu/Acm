@@ -27,5 +27,6 @@ public class B {
 			System.out.println(Max-Min+" "+max_c*min_c);
 		else 
 			System.out.println(Max-Min+" "+max_c*(min_c-1)/2);
+		cin.close();
 	}
 }
