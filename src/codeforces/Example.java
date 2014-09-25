@@ -42,6 +42,7 @@ public class Example {
 			System.out.println(-1);
 		else
 			System.out.println(f[n][100000]);
+		input.close();
 	}
 
 }

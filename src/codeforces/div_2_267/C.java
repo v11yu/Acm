@@ -1,6 +1,5 @@
 package codeforces.div_2_267;
-import java.util.Arrays;
-import java.util.Comparator;
+
 import java.util.Scanner;
 
 
@@ -34,5 +33,6 @@ public class C {
 		}
 
 		System.out.println(ans);
+		cin.close();
     }
 }

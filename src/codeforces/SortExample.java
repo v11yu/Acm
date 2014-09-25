@@ -31,6 +31,7 @@ public class SortExample {
 		} else {
 			System.out.println("Poor Alex");
 		}
+		sc.close();
 	}
 
 }

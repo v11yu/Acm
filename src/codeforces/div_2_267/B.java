@@ -19,6 +19,7 @@ public class B {
                 ans ++;
         }
         System.out.println(ans);
+        cin.close();
     }
     public static boolean ok(Integer x,Integer y,int k){
         Integer res = x^y;

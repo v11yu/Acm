@@ -17,6 +17,7 @@ public class A {
 		}
 		if(check()) System.out.println("YES");
 		else System.out.println("NO");
+		cin.close();
 	}
 	public static boolean check(){
 		for(int i=0;i<n;i++){
