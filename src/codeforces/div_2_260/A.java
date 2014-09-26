@@ -32,9 +32,7 @@ class Laptop implements Comparable<Laptop>{
 		this.price = p;
 		this.quality = q;
 	}
-	/**
-	 * ��С����
-	 */
+
 	@Override
 	public int compareTo(Laptop o) {
 		if(o.price == this.price)
