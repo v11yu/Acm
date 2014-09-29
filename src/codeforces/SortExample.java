@@ -15,6 +15,9 @@ public class SortExample {
 			laptops[i] = new Laptop(sc.nextInt(), sc.nextInt());
 		}
 		Arrays.sort(laptops);
+		for(int i1=0;i1<n;i1++){
+			System.out.println(laptops[i1].price);
+		}
 		int min = laptops[0].quality;
 		boolean hasil = false;
 		for (j = 0; j < n; j++) {
@@ -45,6 +48,7 @@ class Laptop implements Comparable<Laptop> {
 	}
 
 	@Override
+	// 小 到 大
 	public int compareTo(Laptop arg0) {
 		return this.price - arg0.price;
 	}
