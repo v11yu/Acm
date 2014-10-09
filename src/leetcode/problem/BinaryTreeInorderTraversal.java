@@ -17,14 +17,10 @@ public class BinaryTreeInorderTraversal {
 	 * }
 	 */
 	public List<Integer> inorderTraversal(TreeNode root) {
-		//int MAX = 10000000;
 		List<Integer> res = new ArrayList<Integer>();
 		Stack<TreeNode> sta = new Stack<TreeNode>();
-		//TreeNode sta[] = new TreeNode[MAX];
 		//init
 		sta.push(root);
-
-		
 		while(!sta.empty()){
 			TreeNode now = sta.peek();
 			if(now!=null &&now.left != null){
