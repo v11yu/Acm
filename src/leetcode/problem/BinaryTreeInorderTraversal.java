@@ -2,6 +2,7 @@ package leetcode.problem;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Stack;
 
 import leetcode.model.TreeNode;
 
@@ -16,26 +17,27 @@ public class BinaryTreeInorderTraversal {
 	 * }
 	 */
 	public List<Integer> inorderTraversal(TreeNode root) {
-		int MAX = 10000000;
+		//int MAX = 10000000;
 		List<Integer> res = new ArrayList<Integer>();
-		TreeNode sta[] = new TreeNode[MAX];
+		Stack<TreeNode> sta = new Stack<TreeNode>();
+		//TreeNode sta[] = new TreeNode[MAX];
 		//init
-		int top=0;
-		sta[top++] = root;
+		sta.push(root);
+
 		
-		while(top>0){
-			TreeNode now = sta[top - 1];
+		while(!sta.empty()){
+			TreeNode now = sta.peek();
 			if(now!=null &&now.left != null){
-				sta[top++] = now.left;
+				sta.push(now.left);
 				now.left = null;
 				continue;
 			}
 			if(now != null){
 				res.add(now.val); // root may be null?
 			}
-			top--;
+			sta.pop();
 			if(now!=null &&now.right != null){
-				sta[top++] = now.right;
+				sta.push(now.right);
 				now.right = null;
 			}
 		}

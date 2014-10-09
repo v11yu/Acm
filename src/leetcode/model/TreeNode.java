@@ -53,7 +53,7 @@ public class TreeNode {
 		}
 		return root;
 	}
-	private static void show(TreeNode root){
+	public static void show(TreeNode root){
 		if(root == null) return;
 		show(root.left);
 		System.out.println(root.val);
