@@ -3,25 +3,21 @@ package leetcode.problem;
 import leetcode.model.TreeNode;
 
 public class SymmetricTree {
-	private static String str =""; 
 	public boolean isSymmetric(TreeNode root) {
-		second(root);
-		return check(str);
+		return root == null?true:check(root.left,root.right);
 	}
-	public void second(TreeNode root){
-		if(root == null) return ;
-		second(root.left);
-		str+=root.val;
-		second(root.right);
-	}
-	public boolean check(String str){
-		for(int i=0;i<str.length();i++){
-    		if(str.charAt(i) != str.charAt(str.length() - 1 - i)) return false;
-    	}
-		return true;
+
+	public boolean check(TreeNode left,TreeNode right){
+		if(left == null || right == null){
+			if(right == left) return true;
+			return false;
+		}else {
+			if(left.val!=right.val) return false;
+		}
+		return check(left.left,right.right) & check(left.right,right.left);
 	}
 	public static void main(String[] args) {
-		TreeNode t = TreeNode.generateTreeNode("1,2");
+		TreeNode t = TreeNode.generateTreeNode("1,2,3");
 		System.out.println(new SymmetricTree().isSymmetric(t));
 	}
 }
