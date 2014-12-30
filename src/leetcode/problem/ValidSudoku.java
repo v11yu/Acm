@@ -12,7 +12,7 @@ public class ValidSudoku {
 			for(int j=0;j<board[i].length;j++){
 				if(board[i][j]!='.'){
 					int num = board[i][j] - '0'-1;
-					int idx = (i/3+1)*(j/3+1) -1;
+					int idx = (i/3)*3 +j/3;
 					if( (col[i]&ipow[num])!=0 || (row[j]&ipow[num])!=0 ||
 							(m[idx]&ipow[num])!=0 )
 						return false;
