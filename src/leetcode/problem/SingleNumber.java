@@ -1,4 +1,4 @@
-package leetcode.unsolve;
+package leetcode.problem;
 
 /**
  * https://leetcode.com/problems/single-number/

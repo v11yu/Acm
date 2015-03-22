@@ -1,5 +1,9 @@
-package leetcode.unsolve;
-
+package leetcode.problem;
+/**
+ * https://leetcode.com/problems/single-number-ii/
+ * 
+ * @author v11
+ */
 public class SingleNumberII {
 	public int singleNumber(int[] A) {
 		int d[] = new int [32];
