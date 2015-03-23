@@ -32,4 +32,9 @@ public class Point {
     	Point ls[] = new Point[ps.size()];
     	return ps.toArray(ls);
     }
+	@Override
+	public String toString() {
+		return "Point [x=" + x + ", y=" + y + "]";
+	}
+    
 }
