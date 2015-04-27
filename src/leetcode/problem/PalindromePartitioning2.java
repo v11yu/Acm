@@ -29,4 +29,7 @@ public class PalindromePartitioning2 {
 		}
 		return dp[n];
 	}
+	public static void main(String[] args) {
+		System.out.println(new PalindromePartitioning2().minCut("abcdf"));
+	}
 }

@@ -1,10 +1,12 @@
+import java.util.Random;
 import java.util.Scanner;
 
 
 public class Main {
 	public static void main(String[] args) {
-		String str= "helo5000";
-		System.out.println(Integer.parseInt(str));
-		
+		Random r = new Random();
+		for(int i=0;i<100;i++){
+			System.out.println(r.nextInt(3));
+		}
 	}
 }

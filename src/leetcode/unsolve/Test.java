@@ -1,5 +1,9 @@
 package leetcode.unsolve;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -7,6 +11,7 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 import leetcode.model.Point;
@@ -42,14 +47,21 @@ public class Test {
 		}
 		return true;
 	}
+	public static void get(Object a){
+		System.out.println(a);
+	}
+	public static void main(String[] args) throws Exception {
+		File file = new File("C://Users//damao//Desktop//ali-data//output//filter_testing.csv");
+		BufferedReader read = new BufferedReader(new FileReader(file));
+		
+		for(int i=0;i<10;i++){
+			String str = read.readLine();
+			System.out.println(str);
+		}
+		read.close();
 
-	public static void main(String[] args) {
-		String str[] = { ".87654321", "2........", "3........", "4........",
-				"5........", "6........", "7........", "8........", "9........" };
-		char[][] b = new char[9][];
-		for (int i = 0; i < 9; i++)
-			b[i] = str[i].toCharArray();
-		System.out.println(new Test().isValidSudoku(b));
-
+		
+		
 	}
 }
+
